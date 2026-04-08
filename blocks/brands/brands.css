@@ -1,0 +1,88 @@
+.brands {
+    padding: 40px 0;
+  }
+  
+  .brands .brands-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .brands .brands-intro h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  
+  .brands .brands-intro p {
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Cards container */
+  .brands .brands-cards {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .brands .brand-card {
+    min-width: 260px;
+    height: 360px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    scroll-snap-align: start;
+  }
+  
+  /* Image */
+  .brands .brand-card picture,
+  .brands .brand-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Overlay */
+  .brands .brand-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+  }
+  
+  /* Content */
+  .brands .brand-content {
+    position: absolute;
+    inset: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  
+  .brands .brand-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .brands .brand-link {
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+  
+  .brands .brand-link::after {
+    content: '›';
+    font-size: 18px;
+  }
+  
+  /* Scrollbar cleanup */
+  .brands .brands-cards::-webkit-scrollbar {
+    display: none;
+  }
