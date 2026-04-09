@@ -1,0 +1,9 @@
+{
+    "plugins": [
+      {
+        "id": "blocks",
+        "title": "Blocks",
+        "url": "/tools/sidekick/library.json"
+      }
+    ]
+  }
