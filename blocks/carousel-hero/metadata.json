@@ -1,0 +1,41 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-04-08T16:44:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.directlinegroup.co.uk/en/index.html",
+    "originPage": "corporate homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero-carousel",
+    "imagePattern": "large",
+    "structure": "background-image + h1 + h2 + CTA links"
+  },
+  "contentPattern": {
+    "structure": "background-image + heading + subheading + 1-2 CTAs per slide",
+    "buttonCount": 2,
+    "imageCount": 1,
+    "slideCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero carousels",
+      "landing pages with rotating banners",
+      "promotional content with multiple slides"
+    ],
+    "notSuitableFor": [
+      "simple single-image heroes",
+      "content carousels without background images",
+      "product gallery carousels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/en/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-04-08T16:44:00.000Z"
+  }
+}

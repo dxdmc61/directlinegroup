@@ -1,0 +1,74 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.directlinegroup.co.uk/en/index.html"
+      ],
+      "description": "Direct Line Group corporate homepage with hero, key content sections, and corporate links",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            "div.banner.imagecarousel"
+          ]
+        },
+        {
+          "name": "cards-brand",
+          "instances": [
+            "section.brand-section div.teaser-carousels .pageteaser.teaser",
+            "section.main-section div.main-par .parsys_column.column_3_33-33-33 .pageteaser.teaser"
+          ]
+        },
+        {
+          "name": "columns-stats",
+          "instances": [
+            "div.teaser-inner.default.plain-background .parsys_column.column_3_33-33-33"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero",
+          "selector": "div.banner.imagecarousel",
+          "style": null,
+          "blocks": ["carousel-hero"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-brands",
+          "name": "Our Brands",
+          "selector": "section.brand-section",
+          "style": null,
+          "blocks": ["cards-brand"],
+          "defaultContent": [
+            "div.brand-page-teaser h2",
+            "div.brand-page-teaser .teaser-content p"
+          ]
+        },
+        {
+          "id": "section-3-at-a-glance",
+          "name": "DLG At A Glance",
+          "selector": "div.teaser-inner.default.plain-background",
+          "style": "dark",
+          "blocks": ["columns-stats"],
+          "defaultContent": [
+            "div.teaser-inner.default.plain-background h2",
+            "div.teaser-inner.default.plain-background .default a"
+          ]
+        },
+        {
+          "id": "section-4-our-latest",
+          "name": "Our Latest",
+          "selector": "section.main-section div.main-par",
+          "style": null,
+          "blocks": ["cards-brand"],
+          "defaultContent": [
+            "div.main-par > .text h2"
+          ]
+        }
+      ]
+    }
+  ]
+}
