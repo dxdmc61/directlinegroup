@@ -1,9 +1,11 @@
 {
-    "plugins": [
-      {
-        "id": "blocks",
-        "title": "Blocks",
-        "url": "/tools/sidekick/library.json"
-      }
-    ]
-  }
+  "project": "Direct Line Group",
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Library",
+      "url": "/tools/sidekick/library.html",
+      "includePaths": ["/"]
+    }
+  ]
+}
