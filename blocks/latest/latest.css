@@ -1,0 +1,52 @@
+.latest {
+    padding: 40px 0;
+  }
+  
+  /* Heading */
+  .latest h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+  
+  /* Grid */
+  .latest .latest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  /* Card */
+  .latest .latest-card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Title */
+  .latest .latest-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #2d2a6e;
+  }
+  
+  /* Image */
+  .latest .latest-card picture,
+  .latest .latest-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .latest .latest-card img {
+    object-fit: cover;
+  }
+  
+  /* CTA */
+  .latest .latest-card a {
+    margin-top: 12px;
+    color: #e6005c;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .latest .latest-card a::after {
+    content: ' ›';
+  }
