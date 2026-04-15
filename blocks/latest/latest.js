@@ -48,8 +48,8 @@ export default function decorate(block) {
     card.append(link);
 
     grid.append(card);
-  });
-
+  }); 
+ 
   block.textContent = '';
   block.append(h2, grid);
 }
