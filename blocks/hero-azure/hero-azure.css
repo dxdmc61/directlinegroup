@@ -10,12 +10,13 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: var(--spacing-xxl) var(--spacing-m);
-  min-height: 400px;
+  padding: 80px 20px;
+  min-height: 520px;
   overflow: hidden;
-  background: var(--gradient-hero);
+  color: #fff;
 }
 
+/* Background image */
 .hero-azure .hero-azure-bg {
   position: absolute;
   inset: 0;
@@ -28,78 +29,90 @@
   object-fit: cover;
 }
 
+/* Gradient overlay (THIS is key) */
+.hero-azure::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  /* Azure-like gradient */
+  background: linear-gradient(
+      120deg,
+      rgba(0, 120, 212, 0.7),
+      rgba(114, 57, 176, 0.7),
+      rgba(255, 0, 150, 0.5)
+    );
+}
+
+/* Content */
 .hero-azure .hero-azure-content {
   position: relative;
   z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 780px;
 }
 
 .hero-azure .hero-azure-content h1 {
-  color: var(--color-text-inverse);
-  font-size: var(--heading-font-size-xxl);
-  font-weight: 500;
-  letter-spacing: -1.1px;
-  line-height: 1.27;
-  margin-bottom: var(--spacing-s);
-  margin-top: 0;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #fff;
 }
 
 .hero-azure .hero-azure-content p {
-  color: var(--color-text-inverse);
-  font-size: var(--body-font-size-m);
+  font-size: 18px;
   line-height: 1.6;
   opacity: 0.9;
   margin: 0;
 }
 
+/* Tabs container (pill style) */
 .hero-azure .hero-azure-tabs {
   position: relative;
   z-index: 1;
   display: flex;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-l);
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
 }
 
+/* Individual tabs */
 .hero-azure .hero-azure-tab {
-  padding: 10px 24px;
-  border-radius: var(--border-radius-s);
-  background-color: rgb(255 255 255 / 15%);
-  color: var(--color-text-inverse);
+  padding: 12px 28px;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
-  font-size: var(--body-font-size-s);
-  transition: background-color 0.2s;
+  font-size: 14px;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
 }
 
-.hero-azure .hero-azure-tab:hover {
-  background-color: rgb(255 255 255 / 25%);
-  text-decoration: none;
-  color: var(--color-text-inverse);
-}
-
+/* Active tab */
 .hero-azure .hero-azure-tab-active {
-  background-color: rgb(255 255 255 / 30%);
-  border: 1px solid rgb(255 255 255 / 50%);
+  background: #1f5a96;
+  color: #fff;
 }
 
+/* Hover */
+.hero-azure .hero-azure-tab:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Desktop tuning */
 @media (width >= 900px) {
   .hero-azure {
-    padding: var(--spacing-xxxl) var(--spacing-l);
-    min-height: 500px;
+    padding: 120px 20px;
   }
 
   .hero-azure .hero-azure-content h1 {
-    font-size: 56px;
+    font-size: 64px;
   }
 
   .hero-azure .hero-azure-content p {
-    font-size: var(--body-font-size-l);
-  }
-
-  .hero-azure .hero-azure-tab {
-    padding: 12px 28px;
+    font-size: 20px;
   }
 }
