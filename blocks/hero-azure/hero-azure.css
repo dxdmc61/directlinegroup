@@ -1,14 +1,19 @@
+.hero-azure-container .hero-azure-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
 .hero-azure {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* important */
+  justify-content: flex-start;
   text-align: center;
-  padding: 120px 20px 160px;
+  padding: 120px 20px 140px;
   min-height: 620px;
   overflow: hidden;
-  color: #fff;
+  background: #eef4f8;
 }
 
 /* Background image */
@@ -22,24 +27,38 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.9;
 }
 
-/* Complex gradient overlay (Azure-like) */
+/* Azure-style overlay (this is the missing piece) */
 .hero-azure::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
 
   background:
-    linear-gradient(115deg, rgba(0,120,212,0.75) 20%, rgba(114,57,176,0.75) 60%, rgba(255,0,150,0.6) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.4));
+    linear-gradient(115deg, rgba(0,120,212,0.35) 20%, rgba(114,57,176,0.35) 60%, rgba(255,0,150,0.25) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+}
+
+/* Diagonal highlight (Azure signature look) */
+.hero-azure::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60%;
+  height: 80%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  transform: rotate(25deg);
+  z-index: 1;
 }
 
 /* Content */
 .hero-azure .hero-azure-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 760px;
   margin-top: 40px;
 }
@@ -49,29 +68,25 @@
   font-weight: 600;
   line-height: 1.15;
   margin-bottom: 20px;
-  color: #fff;
+  color: #0f172a; /* dark like Azure */
 }
 
 .hero-azure .hero-azure-content p {
   font-size: 18px;
   line-height: 1.6;
-  opacity: 0.95;
+  color: #334155;
 }
 
-/* Tabs wrapper (floating pill) */
+/* Tabs container */
 .hero-azure .hero-azure-tabs {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   gap: 8px;
-  margin-top: 60px;
-  padding: 10px;
+  margin-top: 50px;
+  padding: 8px;
   border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: #e5e7eb;
 }
 
 /* Tabs */
@@ -81,25 +96,37 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
-  color: #1a1a1a;
+  color: #1e293b;
   transition: all 0.2s ease;
 }
 
-/* Active tab */
+/* Active tab (Azure blue pill) */
 .hero-azure .hero-azure-tab-active {
   background: #1f5a96;
   color: #fff;
 }
 
+/* Arrow (like Azure) */
+.hero-azure .hero-azure-tab::after {
+  content: "›";
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* Remove arrow for active tab */
+.hero-azure .hero-azure-tab-active::after {
+  content: "";
+}
+
 /* Hover */
 .hero-azure .hero-azure-tab:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0,0,0,0.06);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hero-azure {
-    padding: 80px 20px 120px;
+    padding: 80px 20px 100px;
     min-height: 500px;
   }
 
