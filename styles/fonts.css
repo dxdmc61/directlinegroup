@@ -1,30 +1,29 @@
 /*
- * Segoe UI font stack for Azure-inspired design.
- * Segoe UI is a system font on Windows; on other platforms we fall back
- * to platform-native sans-serif fonts for a consistent look.
+ * Segoe UI Variable font configuration for Azure design system.
+ * Windows provides Segoe UI Variable natively.
+ * On macOS/Linux, falls back to platform-native sans-serif with size-adjust.
  */
 
-/* Fallback definition for non-Windows systems */
+/* Fallback for non-Windows: match Segoe UI metrics */
 @font-face {
   font-family: segoe-ui-fallback;
   font-style: normal;
-  font-weight: 400;
-  size-adjust: 100%;
-  src: local("Helvetica Neue"), local("Helvetica"), local("Arial");
+  font-weight: 100 900;
+  size-adjust: 100.6%;
+  ascent-override: normal;
+  src: local("SF Pro Text"), local("Helvetica Neue"), local("Helvetica"), local("Arial");
 }
 
 @font-face {
-  font-family: segoe-ui-fallback;
+  font-family: "Segoe UI Variable Text";
   font-style: normal;
-  font-weight: 600;
-  size-adjust: 100%;
-  src: local("Helvetica Neue"), local("Helvetica"), local("Arial");
+  font-weight: 100 900;
+  src: local("Segoe UI Variable Text"), local("Segoe UI");
 }
 
 @font-face {
-  font-family: segoe-ui-fallback;
+  font-family: "Segoe UI Variable Display";
   font-style: normal;
-  font-weight: 700;
-  size-adjust: 100%;
-  src: local("Helvetica Neue"), local("Helvetica"), local("Arial");
+  font-weight: 100 900;
+  src: local("Segoe UI Variable Display"), local("Segoe UI");
 }

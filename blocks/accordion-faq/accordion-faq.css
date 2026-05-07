@@ -1,71 +1,46 @@
-.accordion-faq .accordion-faq-list {
+.accordion-faq > div {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.accordion-faq .accordion-faq-item {
+.accordion-faq > div > div {
   border-bottom: 1px solid var(--color-border-light);
 }
 
-.accordion-faq .accordion-faq-item:first-child {
+.accordion-faq > div > div:first-child {
   border-top: 1px solid var(--color-border-light);
 }
 
-.accordion-faq .accordion-faq-question {
+.accordion-faq > div > div > div:last-child {
+  padding: 0 0 var(--spacing-m) var(--spacing-xl);
+  line-height: 1.5;
+  color: var(--color-text);
+  font-size: var(--body-font-size-m);
+}
+
+.accordion-faq > div > div > div:first-child {
   display: flex;
   align-items: center;
   gap: var(--spacing-s);
   padding: var(--spacing-m) 0;
   cursor: pointer;
-  font-size: var(--body-font-size-m);
-  font-weight: 600;
-  list-style: none;
-  color: var(--color-text);
+  font-size: var(--heading-font-size-s);
+  font-weight: 500;
+  color: var(--color-text-heading);
   transition: color 0.2s;
 }
 
-.accordion-faq .accordion-faq-question:hover {
+.accordion-faq > div > div > div:first-child:hover {
   color: var(--color-brand);
 }
 
-.accordion-faq .accordion-faq-question::-webkit-details-marker {
-  display: none;
-}
-
-.accordion-faq .accordion-faq-question::after {
-  content: "+";
-  margin-left: auto;
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: var(--color-brand);
-  transition: transform 0.2s;
-}
-
-.accordion-faq .accordion-faq-item[open] .accordion-faq-question::after {
-  content: "\2212";
-}
-
-.accordion-faq .accordion-faq-number {
-  color: var(--color-brand);
-  font-size: var(--body-font-size-xs);
-  font-weight: 700;
-  min-width: 24px;
-}
-
-.accordion-faq .accordion-faq-answer {
-  padding: 0 0 var(--spacing-m) 40px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-  font-size: var(--body-font-size-s);
-}
-
-.accordion-faq .accordion-faq-answer a {
+.accordion-faq > div > div > div:last-child a {
   color: var(--color-brand);
   font-weight: 600;
   text-decoration: none;
 }
 
-.accordion-faq .accordion-faq-answer a:hover {
+.accordion-faq > div > div > div:last-child a:hover {
   color: var(--color-brand-hover);
   text-decoration: underline;
 }

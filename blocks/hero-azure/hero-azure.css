@@ -38,7 +38,9 @@
 .hero-azure .hero-azure-content h1 {
   color: var(--color-text-inverse);
   font-size: var(--heading-font-size-xxl);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: -1.1px;
+  line-height: 1.27;
   margin-bottom: var(--spacing-s);
 }
 

@@ -11,16 +11,19 @@
  */
 
 :root {
-  /* Azure color palette */
+  /* Azure color palette — extracted from azure.microsoft.com */
   --color-brand: #0078d4;
   --color-brand-hover: #106ebe;
-  --color-brand-dark: #0062ad;
-  --color-brand-light: #deecf9;
+  --color-brand-dark: #004275;
+  --color-brand-light: #b3daf0;
   --color-accent-purple: #7719aa;
   --color-background: #fff;
+  --color-background-page: #f7f7f7;
+  --color-background-section: #f4fafd;
   --color-background-light: #f2f2f2;
-  --color-background-alt: #f9f9f9;
-  --color-text: #1a1a1a;
+  --color-background-alt: #fefefe;
+  --color-text: #17253d;
+  --color-text-heading: #0e1726;
   --color-text-secondary: #505050;
   --color-text-inverse: #fff;
   --color-border: #d2d2d2;
@@ -28,7 +31,7 @@
   --color-success: #107c10;
   --color-error: #d13438;
 
-  /* Mapped semantic tokens (backward compat) */
+  /* Mapped semantic tokens (backward compat with EDS boilerplate) */
   --background-color: var(--color-background);
   --light-color: var(--color-background-light);
   --dark-color: var(--color-text-secondary);
@@ -36,19 +39,20 @@
   --link-color: var(--color-brand);
   --link-hover-color: var(--color-brand-hover);
 
-  /* Typography */
-  --body-font-family: "Segoe UI", segoe-ui-fallback, -apple-system, blinkmacsystemfont, sans-serif;
-  --heading-font-family: "Segoe UI", segoe-ui-fallback, -apple-system, blinkmacsystemfont, sans-serif;
+  /* Typography — Segoe UI Variable (Windows) with system fallbacks */
+  --body-font-family: "Segoe UI Variable Text", "Segoe UI", segoe-ui-fallback, "Helvetica Neue", helvetica, arial, sans-serif;
+  --heading-font-family: "Segoe UI Variable Display", "Segoe UI", segoe-ui-fallback, "Helvetica Neue", helvetica, arial, sans-serif;
 
   /* Body font sizes */
-  --body-font-size-m: 18px;
-  --body-font-size-s: 16px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 15px;
   --body-font-size-xs: 14px;
+  --body-font-size-l: 18px;
 
-  /* Heading font sizes (mobile-first) */
+  /* Heading font sizes (mobile-first, matching Azure exactly) */
   --heading-font-size-xxl: 36px;
-  --heading-font-size-xl: 30px;
-  --heading-font-size-l: 26px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 24px;
   --heading-font-size-m: 22px;
   --heading-font-size-s: 18px;
   --heading-font-size-xs: 16px;
@@ -63,24 +67,27 @@
   --spacing-xxl: 64px;
   --spacing-xxxl: 96px;
 
-  /* Borders & radii */
+  /* Borders & radii — Azure uses 8px for buttons, 24px for cards */
   --border-radius-s: 4px;
   --border-radius-m: 8px;
-  --border-radius-l: 12px;
+  --border-radius-l: 16px;
+  --border-radius-xl: 24px;
   --border-radius-pill: 100px;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 4px rgb(0 0 0 / 6%);
-  --shadow-md: 0 4px 12px rgb(0 0 0 / 8%);
-  --shadow-lg: 0 8px 24px rgb(0 0 0 / 12%);
-  --shadow-hover: 0 8px 24px rgb(0 0 0 / 16%);
+  /* Shadows — Azure card shadow: 0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14) */
+  --shadow-sm: 0 0 2px rgb(0 0 0 / 12%), 0 2px 4px rgb(0 0 0 / 14%);
+  --shadow-md: 0 2px 8px rgb(0 0 0 / 10%), 0 4px 12px rgb(0 0 0 / 8%);
+  --shadow-lg: 0 4px 16px rgb(0 0 0 / 12%), 0 8px 24px rgb(0 0 0 / 10%);
+  --shadow-hover: 0 4px 16px rgb(0 0 0 / 16%), 0 8px 32px rgb(0 0 0 / 12%);
 
-  /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #0062ad 0%, #7719aa 50%, #44b4e5 100%);
+  /* Gradients — Azure hero gradient (blue → purple → light blue) */
+  --gradient-hero: linear-gradient(135deg, #0062ad 0%, #5c2d91 40%, #0078d4 70%, #50e6ff 100%);
+  --gradient-hero-soft: linear-gradient(135deg, #e8f4fd 0%, #f0e8ff 50%, #e0f7ff 100%);
 
   /* Layout */
-  --max-width: 1200px;
-  --nav-height: 64px;
+  --max-width: 1600px;
+  --content-width: 1200px;
+  --nav-height: 48px;
 }
 
 /* Fallback font for Segoe UI on non-Windows systems */
@@ -92,9 +99,9 @@
 
 @media (width >= 900px) {
   :root {
-    /* Heading sizes scale up on desktop */
-    --heading-font-size-xxl: 48px;
-    --heading-font-size-xl: 36px;
+    /* Heading sizes scale up on desktop — matching Azure's exact values */
+    --heading-font-size-xxl: 44px;
+    --heading-font-size-xl: 40px;
     --heading-font-size-l: 28px;
     --heading-font-size-m: 24px;
     --heading-font-size-s: 20px;
@@ -105,11 +112,11 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--color-background);
+  background-color: var(--color-background-page);
   color: var(--color-text);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -141,15 +148,28 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 500;
+  line-height: 1.27;
   scroll-margin: 40px;
-  color: var(--color-text);
+  color: var(--color-text-heading);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+  letter-spacing: -0.5px;
+  line-height: 1.27;
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+  line-height: 1.33;
+}
+
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
@@ -214,8 +234,8 @@ button.button {
   max-width: 100%;
   margin: 0;
   border: 2px solid transparent;
-  border-radius: var(--border-radius-pill);
-  padding: 10px 24px;
+  border-radius: var(--border-radius-m);
+  padding: 12px 16px;
   font: inherit;
   font-size: var(--body-font-size-s);
   font-weight: 600;
@@ -225,7 +245,7 @@ button.button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 a.button[aria-disabled="true"],
@@ -340,7 +360,7 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: var(--max-width);
+  max-width: var(--content-width);
   margin: auto;
   padding: 0 var(--spacing-m);
 }
@@ -358,16 +378,23 @@ main > .section:first-of-type {
 /* Section variants */
 main .section.light,
 main .section.highlight {
-  background-color: var(--color-background-light);
+  background-color: var(--color-background-section);
   margin: 0;
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xxxl) 0;
 }
 
 main .section.dark {
-  background-color: var(--color-text);
+  background-color: var(--color-text-heading);
   color: var(--color-text-inverse);
   margin: 0;
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-xxxl) 0;
+}
+
+main .section.gradient {
+  background: var(--gradient-hero);
+  color: var(--color-text-inverse);
+  margin: 0;
+  padding: var(--spacing-xxxl) 0;
 }
 
 main .section.dark h1,
@@ -385,13 +412,14 @@ main .section.dark a:any-link {
 
 /* Card base styles (reusable across card-based blocks) */
 main .card {
-  background-color: var(--color-background);
-  border-radius: var(--border-radius-l);
-  box-shadow: var(--shadow-md);
+  background-color: var(--color-background-alt);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 main .card:hover {
   box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
