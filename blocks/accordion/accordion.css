@@ -1,0 +1,116 @@
+.accordion-container .accordion-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accordion .accordion-list {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.accordion .accordion-item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.accordion .accordion-question {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+  padding: var(--spacing-m) 0;
+  cursor: pointer;
+  font-size: var(--heading-font-size-s);
+  font-weight: 500;
+  color: var(--color-text-heading);
+  transition: color 0.2s;
+  list-style: none;
+}
+
+.accordion .accordion-question::-webkit-details-marker {
+  display: none;
+}
+
+.accordion .accordion-question::marker {
+  display: none;
+  content: "";
+}
+
+.accordion .accordion-question:hover {
+  color: var(--color-brand);
+}
+
+.accordion .accordion-number {
+  flex-shrink: 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  color: var(--color-brand);
+  min-width: 28px;
+}
+
+.accordion .accordion-question-text {
+  flex: 1;
+}
+
+.accordion .accordion-question-text h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.accordion .accordion-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.accordion .accordion-icon::before,
+.accordion .accordion-icon::after {
+  content: "";
+  position: absolute;
+  background-color: currentcolor;
+  transition: transform 0.3s ease;
+}
+
+.accordion .accordion-icon::before {
+  top: 50%;
+  left: 2px;
+  right: 2px;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.accordion .accordion-icon::after {
+  left: 50%;
+  top: 2px;
+  bottom: 2px;
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+.accordion .accordion-item[open] .accordion-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+  opacity: 0;
+}
+
+.accordion .accordion-answer {
+  padding: 0 0 var(--spacing-m) calc(28px + var(--spacing-s));
+  line-height: 1.6;
+  color: var(--color-text);
+  font-size: var(--body-font-size-m);
+}
+
+.accordion .accordion-answer p {
+  margin: 0 0 var(--spacing-xs);
+}
+
+.accordion .accordion-answer a {
+  color: var(--color-brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.accordion .accordion-answer a:hover {
+  color: var(--color-brand-hover);
+  text-decoration: underline;
+}

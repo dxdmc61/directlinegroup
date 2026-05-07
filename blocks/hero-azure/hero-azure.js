@@ -15,16 +15,34 @@ export default function decorate(block) {
   // Row 2: Heading + description
   const contentRow = rows[1];
   if (contentRow) {
-    contentRow.classList.add('hero-azure-content');
+    const contentDiv = contentRow.querySelector('div') || contentRow;
+    contentDiv.classList.add('hero-azure-content');
+    if (contentRow !== contentDiv) {
+      block.append(contentDiv);
+      contentRow.remove();
+    } else {
+      contentRow.classList.add('hero-azure-content');
+    }
   }
 
   // Row 3: Tab links
   const tabsRow = rows[2];
   if (tabsRow) {
-    tabsRow.classList.add('hero-azure-tabs');
+    const tabsDiv = document.createElement('nav');
+    tabsDiv.classList.add('hero-azure-tabs');
+    tabsDiv.setAttribute('aria-label', 'Page navigation');
     const links = tabsRow.querySelectorAll('a');
     links.forEach((link) => {
       link.classList.add('hero-azure-tab');
+      // Mark current page tab as active
+      if (link.getAttribute('href') === window.location.pathname
+        || link.getAttribute('href') === `${window.location.pathname}/`) {
+        link.classList.add('hero-azure-tab-active');
+        link.setAttribute('aria-current', 'page');
+      }
+      tabsDiv.append(link);
     });
+    block.append(tabsDiv);
+    tabsRow.remove();
   }
 }

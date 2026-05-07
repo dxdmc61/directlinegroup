@@ -22,7 +22,6 @@ export default function decorate(block) {
     });
 
     track.append(card);
-    row.remove();
   });
 
   carousel.append(track);
@@ -37,8 +36,28 @@ export default function decorate(block) {
   // Navigation buttons
   const nav = document.createElement('div');
   nav.classList.add('cards-customer-nav');
-  nav.innerHTML = '<button class="cards-customer-prev" aria-label="Previous">&lt;</button><button class="cards-customer-next" aria-label="Next">&gt;</button>';
+  nav.innerHTML = `
+    <button class="cards-customer-prev" aria-label="Previous slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="cards-customer-next" aria-label="Next slide">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  `;
   carousel.append(nav);
+
+  // Dots indicator
+  const cards = track.querySelectorAll('.cards-customer-card');
+  const dots = document.createElement('div');
+  dots.classList.add('cards-customer-dots');
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('cards-customer-dot');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    if (i === 0) dot.classList.add('active');
+    dots.append(dot);
+  });
+  carousel.append(dots);
 
   // Carousel behavior
   const prevBtn = nav.querySelector('.cards-customer-prev');
@@ -46,10 +65,12 @@ export default function decorate(block) {
   let currentIndex = 0;
 
   function updateCarousel() {
-    const cards = track.querySelectorAll('.cards-customer-card');
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= cards.length - 1;
+    dots.querySelectorAll('.cards-customer-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
   }
 
   prevBtn.addEventListener('click', () => {
@@ -60,11 +81,17 @@ export default function decorate(block) {
   });
 
   nextBtn.addEventListener('click', () => {
-    const cards = track.querySelectorAll('.cards-customer-card');
     if (currentIndex < cards.length - 1) {
       currentIndex += 1;
       updateCarousel();
     }
+  });
+
+  dots.querySelectorAll('.cards-customer-dot').forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      updateCarousel();
+    });
   });
 
   block.replaceChildren(carousel);

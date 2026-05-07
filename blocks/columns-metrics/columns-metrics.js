@@ -4,24 +4,25 @@ export default function decorate(block) {
   grid.classList.add('columns-metrics-grid');
 
   rows.forEach((row) => {
-    const cols = [...row.children];
     const card = document.createElement('div');
     card.classList.add('columns-metrics-card');
 
-    // Detect stat cards by looking for large numbers
+    // Detect image cards vs stat cards
+    const pic = row.querySelector('picture');
     const text = row.textContent.trim();
-    const hasLargeNumber = /^\d+[%+]?$/.test(text.split('\n')[0]?.trim());
+    const hasLargeNumber = /^\d+[%+]?/.test(text.split('\n')[0]?.trim());
 
-    if (hasLargeNumber || cols.length === 1) {
-      card.classList.add('columns-metrics-stat');
-    } else {
+    if (pic && !hasLargeNumber) {
       card.classList.add('columns-metrics-case-study');
+    } else {
+      card.classList.add('columns-metrics-stat');
     }
 
     while (row.firstElementChild) card.append(row.firstElementChild);
     grid.append(card);
-    row.remove();
   });
 
+  // Remove original rows
+  while (block.firstChild) block.firstChild.remove();
   block.append(grid);
 }

@@ -10,7 +10,7 @@
 .cards-feature > ul > li {
   border-radius: var(--border-radius-xl);
   overflow: hidden;
-  background-color: var(--color-background-alt);
+  background-color: var(--color-background);
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
@@ -20,42 +20,42 @@
   transform: translateY(-2px);
 }
 
-.cards-feature .cards-feature-card-image {
+.cards-feature .cards-feature-image {
   line-height: 0;
 }
 
-.cards-feature .cards-feature-card-image img {
+.cards-feature .cards-feature-image img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.cards-feature .cards-feature-card-body {
+.cards-feature .cards-feature-body {
   padding: var(--spacing-m) var(--spacing-l);
 }
 
-.cards-feature .cards-feature-card-body h3 {
+.cards-feature .cards-feature-body h3 {
   margin: 0 0 var(--spacing-xs);
   font-size: var(--heading-font-size-l);
   font-weight: 500;
   color: var(--color-text-heading);
 }
 
-.cards-feature .cards-feature-card-body p {
+.cards-feature .cards-feature-body p {
   margin: 0 0 var(--spacing-s);
   color: var(--color-text);
   font-size: var(--body-font-size-m);
   line-height: 1.5;
 }
 
-.cards-feature .cards-feature-card-body a {
+.cards-feature .cards-feature-body a {
   color: var(--color-brand);
   font-weight: 600;
   text-decoration: none;
   font-size: var(--body-font-size-s);
 }
 
-.cards-feature .cards-feature-card-body a:hover {
+.cards-feature .cards-feature-body a:hover {
   color: var(--color-brand-hover);
   text-decoration: underline;
 }

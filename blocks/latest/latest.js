@@ -32,7 +32,7 @@ export default function decorate(block) {
         img.src,
         img.alt,
         false,
-        [{ width: '750' }]
+        [{ width: '750' }],
       );
     }
 
@@ -48,8 +48,8 @@ export default function decorate(block) {
     card.append(link);
 
     grid.append(card);
-  }); 
- 
+  });
+
   block.textContent = '';
   block.append(h2, grid);
 }
