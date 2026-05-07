@@ -1,72 +1,41 @@
 {
   "templates": [
     {
-      "name": "homepage",
+      "name": "azure-explore",
       "urls": [
-        "https://www.directlinegroup.co.uk/en/index.html"
+        "https://azure.microsoft.com/en-us/explore/"
       ],
-      "description": "Direct Line Group corporate homepage with hero, key content sections, and corporate links",
+      "description": "Azure Explore landing page with hero, product categories, customer stories, and call-to-action sections",
       "blocks": [
         {
-          "name": "carousel-hero",
-          "instances": [
-            "div.banner.imagecarousel"
-          ]
+          "name": "hero-azure",
+          "selector": ".section-master--blade-hero-slim",
+          "parser": "parsers/hero-azure.js",
+          "description": "Hero with gradient background, heading, description, CTAs"
         },
         {
-          "name": "cards-brand",
-          "instances": [
-            "section.brand-section div.teaser-carousels .pageteaser.teaser",
-            "section.main-section div.main-par .parsys_column.column_3_33-33-33 .pageteaser.teaser"
-          ]
+          "name": "cards-feature",
+          "selector": ".three-up-cards, .block-feature",
+          "parser": "parsers/cards-feature.js",
+          "description": "Feature cards (image + heading + description)"
         },
         {
-          "name": "columns-stats",
-          "instances": [
-            "div.teaser-inner.default.plain-background .parsys_column.column_3_33-33-33"
-          ]
-        }
-      ],
-      "sections": [
-        {
-          "id": "section-1-hero",
-          "name": "Hero",
-          "selector": "div.banner.imagecarousel",
-          "style": null,
-          "blocks": ["carousel-hero"],
-          "defaultContent": []
+          "name": "columns-metrics",
+          "selector": ".card-grid--disable-card-promo",
+          "parser": "parsers/columns-metrics.js",
+          "description": "Statistics/metrics section with case study and stat cards"
         },
         {
-          "id": "section-2-brands",
-          "name": "Our Brands",
-          "selector": "section.brand-section",
-          "style": null,
-          "blocks": ["cards-brand"],
-          "defaultContent": [
-            "div.brand-page-teaser h2",
-            "div.brand-page-teaser .teaser-content p"
-          ]
+          "name": "accordion-faq",
+          "selector": ".ocr-faq",
+          "parser": "parsers/accordion-faq.js",
+          "description": "FAQ accordion with numbered items"
         },
         {
-          "id": "section-3-at-a-glance",
-          "name": "DLG At A Glance",
-          "selector": "div.teaser-inner.default.plain-background",
-          "style": "dark",
-          "blocks": ["columns-stats"],
-          "defaultContent": [
-            "div.teaser-inner.default.plain-background h2",
-            "div.teaser-inner.default.plain-background .default a"
-          ]
-        },
-        {
-          "id": "section-4-our-latest",
-          "name": "Our Latest",
-          "selector": "section.main-section div.main-par",
-          "style": null,
-          "blocks": ["cards-brand"],
-          "defaultContent": [
-            "div.main-par > .text h2"
-          ]
+          "name": "cards-customer",
+          "selector": ".carousel--type-case-study",
+          "parser": "parsers/cards-customer.js",
+          "description": "Customer story cards carousel"
         }
       ]
     }

@@ -1,0 +1,115 @@
+.hero-azure-container .hero-azure-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-azure {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-m);
+  min-height: 400px;
+  overflow: hidden;
+  background: var(--gradient-hero);
+}
+
+.hero-azure .hero-azure-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-azure .hero-azure-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-azure .hero-azure-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-azure .hero-azure-content h1 {
+  color: var(--color-text-inverse);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-s);
+}
+
+.hero-azure .hero-azure-content p {
+  color: var(--color-text-inverse);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.hero-azure .hero-azure-content a.button:any-link {
+  border-radius: var(--border-radius-pill);
+  padding: 12px 28px;
+  font-weight: 600;
+}
+
+.hero-azure .hero-azure-content a.button.primary:any-link {
+  background-color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+  color: var(--color-brand);
+}
+
+.hero-azure .hero-azure-content a.button.primary:hover {
+  background-color: var(--color-background-light);
+  border-color: var(--color-background-light);
+}
+
+.hero-azure .hero-azure-content a.button.secondary:any-link {
+  background-color: transparent;
+  border-color: var(--color-text-inverse);
+  color: var(--color-text-inverse);
+}
+
+.hero-azure .hero-azure-content a.button.secondary:hover {
+  background-color: rgb(255 255 255 / 15%);
+}
+
+.hero-azure .hero-azure-tabs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-l);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-azure .hero-azure-tab {
+  padding: 10px 24px;
+  border-radius: var(--border-radius-s);
+  background-color: rgb(255 255 255 / 15%);
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--body-font-size-s);
+  transition: background-color 0.2s;
+}
+
+.hero-azure .hero-azure-tab:hover {
+  background-color: rgb(255 255 255 / 25%);
+  text-decoration: none;
+  color: var(--color-text-inverse);
+}
+
+@media (width >= 900px) {
+  .hero-azure {
+    padding: var(--spacing-xxxl) var(--spacing-l);
+    min-height: 500px;
+  }
+
+  .hero-azure .hero-azure-content h1 {
+    font-size: 56px;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "accordion-faq",
+  "description": "Numbered FAQ accordion with expand/collapse behavior, question headings and answer text with optional links",
+  "group": "accordion",
+  "source": "azure-explore",
+  "created": "2026-05-06",
+  "structure": {
+    "rows": 6,
+    "columns": 2,
+    "rowDefinitions": [
+      "Question (H3 heading)",
+      "Answer text + optional Learn more link"
+    ]
+  }
+}

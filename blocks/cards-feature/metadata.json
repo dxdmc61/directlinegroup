@@ -1,0 +1,16 @@
+{
+  "name": "cards-feature",
+  "description": "Three-column feature cards with image (4:3 ratio), heading, description, and CTA link per card",
+  "group": "cards",
+  "source": "azure-explore",
+  "created": "2026-05-06",
+  "structure": {
+    "rows": 3,
+    "columns": 3,
+    "rowDefinitions": [
+      "Image (4:3 ratio)",
+      "H3 heading",
+      "Description paragraph + link"
+    ]
+  }
+}

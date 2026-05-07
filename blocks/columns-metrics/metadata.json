@@ -1,0 +1,16 @@
+{
+  "name": "columns-metrics",
+  "description": "Mixed grid layout with a case study card (image + blockquote + source) and stat cards showing large numbers with descriptions",
+  "group": "columns",
+  "source": "azure-explore",
+  "created": "2026-05-06",
+  "structure": {
+    "rows": 3,
+    "columns": 4,
+    "rowDefinitions": [
+      "Case study: image + quote + source + expand link",
+      "Stat card: large number + description + background graphic",
+      "Stat card (dark): large number + description + background graphic"
+    ]
+  }
+}

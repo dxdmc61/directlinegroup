@@ -1,0 +1,16 @@
+{
+  "name": "hero-azure",
+  "description": "Hero block with gradient background image, centered H1 heading, description paragraph, and tabbed audience selector navigation",
+  "group": "hero",
+  "source": "azure-explore",
+  "created": "2026-05-06",
+  "structure": {
+    "rows": 3,
+    "columns": 1,
+    "rowDefinitions": [
+      "Background image",
+      "H1 heading + description text",
+      "Tab links with labels and URLs"
+    ]
+  }
+}

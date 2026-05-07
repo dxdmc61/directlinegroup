@@ -1,0 +1,27 @@
+{
+  "status": "success",
+  "url": "https://azure.microsoft.com/en-us/explore/",
+  "path": "en-us/explore",
+  "timestamp": "2026-05-07T03:48:50.629Z",
+  "title": "Get to Know Azure | Microsoft Azure",
+  "template": "azure-explore",
+  "blocks": [
+    "hero-azure",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "cards-feature",
+    "columns-metrics",
+    "accordion-faq",
+    "cards-customer"
+  ]
+}

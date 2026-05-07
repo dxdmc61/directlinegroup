@@ -1,0 +1,17 @@
+{
+  "name": "cards-customer",
+  "description": "Carousel of customer story testimonial cards with customer image, logo, headline, description, product badges, and CTA button",
+  "group": "cards",
+  "source": "azure-explore",
+  "created": "2026-05-06",
+  "structure": {
+    "rows": 6,
+    "columns": 4,
+    "rowDefinitions": [
+      "Customer header image",
+      "Customer logo/thumbnail",
+      "Headline + description blockquote",
+      "Products list + Read the story CTA"
+    ]
+  }
+}
